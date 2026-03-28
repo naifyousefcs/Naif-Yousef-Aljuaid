@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative — Naif Aljuaid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #f8f7f4;
+  --surface: #ffffff;
+  --border:  #e0dbd3;
+  --ink:     #1a1814;
+  --ink2:    #4a4540;
+  --ink3:    #8a837a;
+  --blue:    #1a3a5c;
+  --blue-lt: #e8eef5;
+  --shadow-md: 0 8px 32px rgba(26,24,20,0.10);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 18px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(248,247,244,0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--blue); }
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--blue); }
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem 2.5rem 5rem;
+  text-align: center;
+}
+.main-inner { max-width: 560px; }
+
+.eyebrow {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.1s forwards;
+}
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.2s forwards;
+}
+.page-title em { font-style: normal; color: var(--blue); }
+.page-desc {
+  font-size: 1.1rem;
+  color: var(--ink2);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.35s forwards;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.5s forwards;
+}
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  animation: pulse 2s ease-in-out infinite;
+}
+.dot:nth-child(2) { animation-delay: 0.3s; background: var(--blue); opacity: 0.5; }
+.dot:nth-child(3) { animation-delay: 0.6s; }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.2s;
+  opacity: 0;
+  animation: fadeUp 0.5s 0.65s forwards;
+}
+.back-link:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.8rem 2.5rem;
+}
+.footer-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+.footer-copy { font-size: 0.85rem; color: var(--ink3); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Naif <span>Aljuaid</span></a>
+    <a class="nav-back" href="index.html">← Portfolio</a>
+  </div>
+</nav>
+
+<main>
+  <div class="main-inner">
+    <div class="eyebrow">Creative Space</div>
+    <h1 class="page-title">Coming<br><em>Soon</em></h1>
+    <p class="page-desc">This space is reserved for creative work — photography, design, art, and projects outside of cybersecurity. Something is being built here. Check back soon.</p>
+    <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <a href="index.html" class="back-link">← Return to Portfolio</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">Naif Aljuaid</a>
+    <span class="footer-copy">© 2025 Naif Yousef Aljuaid</span>
+  </div>
+</footer>
+
+</body>
+</html>
